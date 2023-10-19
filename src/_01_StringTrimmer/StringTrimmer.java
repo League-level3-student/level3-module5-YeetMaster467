@@ -13,7 +13,14 @@ public class StringTrimmer {
 
         // 3. Else you need to remove the last letter from the string,
         //    reduce removesLeft by 1, and then call trimString() 
-
-        return null;
+    	
+    	if ( removesLeft == 0 || str.isEmpty() || str == null ) {
+    		return str;
+    	} else {
+    		removesLeft--;
+    		str = trimString(str.substring(0, str.length() - 1), removesLeft);
+    	}
+    	
+        return str;
     }
 }
